@@ -35,10 +35,6 @@ namespace MyFunctionProj
                 {
                     outputData["Exception1"] = e.Message;
                 }
-
-
-                //outputData["MapToIPv4"] = remoteAddress.MapToIPv4().Address.ToString();
-                //outputData["MapToIPv6"] = remoteAddress.MapToIPv6().Address.ToString();
                 try
                 {
                     byte[] ipV4Bytes = remoteAddress.MapToIPv4().GetAddressBytes();
@@ -54,14 +50,6 @@ namespace MyFunctionProj
             {
                 outputData["Exception3"] = e.Message;
             }
-
-            //string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
-            //dynamic data = JsonConvert.DeserializeObject(requestBody);
-
-            //string responseMessage = string.IsNullOrEmpty(name)
-            //    ? "This HTTP triggered function executed successfully. Pass a name in the query string or in the request body for a personalized response."
-            //    : $"Hello, {name}. This HTTP triggered function executed successfully.";
-
             return new OkObjectResult(outputData.ToString());
         }
     }
